@@ -22,7 +22,7 @@
 					<input name="name" type="text"
 						class="login-input"  title="이름" placeholder="이름"> <br>
                     생년월일<input type="date" id="birth" name="birth" min="1960-01-01" max="2024-02-14"/>
-                    <input type="text" id="birthInput"><br>
+                    <input type="text" id="birth-input" placeholder="생년월일"><br>
 					<input name="email" type="text" class="login-input"  title="이메일"
 						placeholder="이메일"><br>
 				    <input type="text" id="sample6_postcode" placeholder="우편번호">
@@ -48,8 +48,14 @@
 	</div>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-   
+<script>     
+        const birthInput = document.getElementById('birth');
+        const birthTextInput = document.getElementById('birth-input');
+        birthInput.addEventListener('change', function() {
+        const selectedDate = birthInput.value;    
+        birthTextInput.value = selectedDate;
+        });
+
     function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {

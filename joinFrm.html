@@ -9,7 +9,7 @@
     <div class="wrap">
 		<section>
 			<div class="content">
-				<form action="/member/join" method="post" class="login-form"
+				<form action="" method="post" class="login-form"
 					name="jFrm">
 					
 					<h2 class="login-header">회원 가입</h2><br>
@@ -17,12 +17,12 @@
 						title="아이디" autofocus placeholder="아이디"> 
 					<span id="checkMsg"> </span>
 					<input  type="button" id="checkId" class="idcheck-btn" value="중복확인"><br>
-					<input name="pw" type="password" class="login-input" 
+					<input name="pass" type="password" class="login-input" 
 						title="비밀번호" placeholder="비밀번호"> <br>
 					<input name="name" type="text"
 						class="login-input"  title="이름" placeholder="이름"> <br>
-                    생년월일<input type="date" id="birth" name="birth" min="1960-01-01" max="2024-02-14"/>
-                    <input type="text" id="birth-input" placeholder="생년월일"><br>
+                    생년월일<input type="date" id="birth" min="1960-01-01" max="2024-02-14"/><br>
+                    <input type="text" id="birth-input" name="birth" placeholder="생년월일"><br>
 					<input name="email" type="text" class="login-input"  title="이메일"
 						placeholder="이메일"><br>
 				    <input type="text" id="sample6_postcode" placeholder="우편번호">
@@ -33,15 +33,16 @@
 					연락처:<select id="phone">
 						<option value="010">010</option>				   
 					</select>
-					<input type="text" id="phone1" oninput="formatPhoneNumberPart(this); formatPhoneNumber();" oninput="formatPhoneNumber()" maxlength="4" required>
-					<input type="text" id="phone2" oninput="formatPhoneNumberPart(this); formatPhoneNumber();" oninput="formatPhoneNumber()" maxlength="4" required><br>
+					<input type="text" id="phone1" maxlength="4" required>
+                    -
+					<input type="text" id="phone2" maxlength="4" required><br>
 				    <input type="hidden" id="Number" name="phone">
 					<select name = "gender">
 						<option value = "남자">남자</option>
 						<option value = "여자">여자</option>
 					</select>
 					<input type="hidden" value="nor" name="type"><br>
-					<input type="submit" class="login-btn" id="submit" value="가입" ><br>
+					<input type="submit" class="login-btn" value="가입" ><br>
 				</form>
 			</div>
 		</section>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이력서 업데이트</title>
+</head>
+<body>
+		<form action="">
+				<div class="detail">
+				<div class="detail-sub">
+					<div class="detail-title">사진등록</div>
+					<div class="detail-content">
+						<c:if test="${empty myDto.s_poto}">
+						<img class="poto" src="resources/images/no_image.jpg">
+						</c:if>
+						<c:if test="${!empty myDto.s_poto}">
+							<img class="poto" src="resources/upload/${myDto.s_poto}">
+						</c:if>
+					</div>
+				</div>
+			</div>
+			<div class="filebox">
+				<!-- 수정 파일 입력 처리 영역 -->
+				<label for="file">업로드</label>
+				<input type="file" name="files" id="file"
+					   multiple>
+				<input type="text" class="upload-name"
+					   value="파일선택" readonly>
+			</div>
+			<input type="text" name="s_name" class="name" placeholder="사장님들에게 노출될 이름을 입력해주세요"><br>
+			<input type="text" name="s_contents" class="content" placeholder="사장님에게 본인을 어필해보세요"><br>
+			<input type="text" name="s_address" class="address" placeholder="거주지를 입력해주세요">
+
+			<input type="submit" value="작성완료">
+			<input type="reset" value="뒤로가기">
+		</form>
+</body>
+</html>
